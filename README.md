@@ -1,6 +1,6 @@
 对于题2，在检测图形的过程中，一开始使用canny边缘检测的方法
->edges=cv2.Canny(blur,10,30)
->contours=cv2.findContours(edges,cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+>>edges=cv2.Canny(blur,10,30)
+>>contours=cv2.findContours(edges,cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
   检测出来的结果显示只有两个图形，
 原因在于画布上画的图案颜色太浅，没被检测到
 所以采用全图二值化的方法将图案转成黑白,**经cv2.CHAIN_APPROX_SIMPLE反转后将大于180的输出为黑，小于180的输出为白**
