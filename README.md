@@ -1,7 +1,7 @@
 对于题2，在检测图形的过程中，一开始使用canny边缘检测的方法
 >edges=cv2.Canny(blur,10,30)
 >contours=cv2.findContours(edges,cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-检测出来的结果显示只有两个图形，
+  检测出来的结果显示只有两个图形，
 原因在于画布上画的图案颜色太浅，没被检测到
 所以采用全图二值化的方法将图案转成黑白,**经cv2.CHAIN_APPROX_SIMPLE反转后将大于180的输出为黑，小于180的输出为白**
 第三题用质心公式**[cx = int(M["m10"] / M["m00"])，cy = int(M["m01"] / M["m00"])]**找到中心点的坐标（cx，cy），继而在质心上标序号
